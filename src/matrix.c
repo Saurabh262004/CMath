@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <math.h>
-#include "../../include/basic/matrix.h"
+#include "../include/matrix.h"
 
 // Matrix2I
 Matrix2I *matrix2I_create(int rows, int columns) {

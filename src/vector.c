@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <math.h>
-#include "../../include/basic/vector.h"
+#include "../include/vector.h"
 
 // Vec2I
 int vec2I_length(Vec2I v) {
