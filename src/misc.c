@@ -4,10 +4,6 @@
 #include <math.h>
 #include <time.h>
 
-int main() {
-  srand(time(NULL));
-}
-
 int mapI(int n, Vec2I v1, Vec2I v2) {
   double a = v1.x, b = v1.y;
   double c = v2.x, d = v2.y;
@@ -21,6 +17,8 @@ float mapF(float n, Vec2F v1, Vec2F v2) {
 }
 
 int randI(int min, int max) {
+  srand(time(NULL));
+
   Vec2I v1 = {0, RAND_MAX};
   Vec2I v2 = {min, max};
 
@@ -28,6 +26,8 @@ int randI(int min, int max) {
 }
 
 float randF(float min, float max) {
+  srand(time(NULL));
+
   Vec2F v1 = {0.0f, (float)RAND_MAX};
   Vec2F v2 = {min, max};
 

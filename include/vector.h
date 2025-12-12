@@ -11,6 +11,8 @@ int vec2I_length(Vec2I v);
 
 Vec2I vec2I_add(Vec2I v1, Vec2I v2);
 
+void vec2I_randomize(Vec2I v, int min, int max);
+
 // Vec2F
 typedef struct {
   float x;
@@ -20,6 +22,8 @@ typedef struct {
 float vec2F_length(Vec2F v);
 
 Vec2F vec2F_add(Vec2F v1, Vec2F v2);
+
+void vec2F_randomize(Vec2F v, float min, float max);
 
 // VecNI
 typedef struct {

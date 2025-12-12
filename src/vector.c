@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <math.h>
+#include "../include/misc.h"
 #include "../include/vector.h"
 
 // Vec2I
@@ -13,6 +14,11 @@ Vec2I vec2I_add(Vec2I v1, Vec2I v2) {
   return result;
 }
 
+void vec2I_randomize(Vec2I v, int min, int max) {
+  v.x = randI(min, max);
+  v.y = randI(min, max);
+}
+
 // Vec2F
 float vec2F_length(Vec2F v) {
   return sqrtf(v.x * v.x + v.y * v.y);
@@ -22,6 +28,11 @@ Vec2F vec2F_add(Vec2F v1, Vec2F v2) {
   Vec2F result = {v1.x + v2.x, v1.y + v2.y};
 
   return result;
+}
+
+void vec2F_randomize(Vec2F v, float min, float max) {
+  v.x = randF(min, max);
+  v.y = randF(min, max);
 }
 
 // VecNI
