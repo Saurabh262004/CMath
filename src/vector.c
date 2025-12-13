@@ -14,9 +14,9 @@ Vec2I vec2I_add(Vec2I v1, Vec2I v2) {
   return result;
 }
 
-void vec2I_randomize(Vec2I v, int min, int max) {
-  v.x = randI(min, max);
-  v.y = randI(min, max);
+void vec2I_randomize(Vec2I *v, int min, int max) {
+  v->x = randI(min, max);
+  v->y = randI(min, max);
 }
 
 // Vec2F
@@ -30,9 +30,9 @@ Vec2F vec2F_add(Vec2F v1, Vec2F v2) {
   return result;
 }
 
-void vec2F_randomize(Vec2F v, float min, float max) {
-  v.x = randF(min, max);
-  v.y = randF(min, max);
+void vec2F_randomize(Vec2F *v, float min, float max) {
+  v->x = randF(min, max);
+  v->y = randF(min, max);
 }
 
 // VecNI
@@ -70,6 +70,12 @@ int vecNI_add(VecNI *v1, VecNI *v2, VecNI *v3) {
   return 0;
 }
 
+void vecNI_randomize(VecNI *v, int min, int max) {
+  for (int i = 0; i < v->n; i++) {
+    v->comp[i] = randI(min, max);
+  }
+}
+
 // VecNF
 VecNF *vecNF_create(int n) {
   VecNF *v = malloc(sizeof(VecNF) + n * sizeof(float));
@@ -103,4 +109,10 @@ int vecNF_add(VecNF *v1, VecNF *v2, VecNF *v3) {
   v3->n = v1->n;
 
   return 0;
+}
+
+void vecNF_randomize(VecNF *v, float min, float max) {
+  for (int i = 0; i < v->n; i++) {
+    v->comp[i] = randF(min, max);
+  }
 }
